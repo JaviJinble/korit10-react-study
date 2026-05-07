@@ -34,7 +34,6 @@ const initUser = {
                     <input type="text" name='email' value={inputValues.email} onChange={handleInputOnChange} placeholder='이메일' />
                     <button disabled={!isValid} onClick={handleRegisterOnClick}>등록</button>
                 </div>
-                {/* <UserListTable users={users} setUsers={setUsers}/> */}
             </div>
 
         </>
