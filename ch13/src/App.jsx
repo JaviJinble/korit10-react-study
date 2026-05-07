@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
-import { useInput } from './hooks/inputs';
+import { useState } from 'react'
 import UserListTable from './components/UserListTable';
 import UserRegister from './components/UserRegister';
 

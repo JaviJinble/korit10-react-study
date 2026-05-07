@@ -3,8 +3,8 @@ import EditModal from "./EditModal";
 
 
 function UserListTable({users, setUsers}) {
-    const [modalOpen, setModalOpen] = useState(false);
-    const [editModal, setEditModal] = useState(<></>);
+    const [ modalOpen, setModalOpen ] = useState(false);
+    const [ editModal, setEditModal ] = useState(<></>);
     
     const handleEditOnClick = (e) => {
         setEditModal(<EditModal isOpen={true} onClose={handleModalOnClose} users={users} setUsers={setUsers} editUserId={parseInt(e.target.value)} />)
@@ -15,7 +15,7 @@ function UserListTable({users, setUsers}) {
         const userId = parseInt(e.target.value);
 
         console.log(typeof userId);
-        console.log(typeof users[0].id)
+        console.log(typeof users[0].id);
 
         setUsers(users.filter(user => user.id !== userId));
     };

@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
-
+import { useEffect, useState } from 'react'
 import { REGEX } from "../constants/regex";
 
 export function useInput({initValue}) {
