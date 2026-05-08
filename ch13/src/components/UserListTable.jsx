@@ -1,7 +1,7 @@
 import { useState } from "react";
 import EditModal from "./EditModal";
 
-
+// UserListTable 역할 사용자 목록 출력
 function UserListTable({users, setUsers}) {
     const [ modalOpen, setModalOpen ] = useState(false);
     const [ editModal, setEditModal ] = useState(<></>);
@@ -17,6 +17,8 @@ function UserListTable({users, setUsers}) {
         console.log(typeof userId);
         console.log(typeof users[0].id);
 
+        // 삭제 기능 핵심
+        // filter 의미: 조건에 맞는 것만 남김. -> 즉, 삭제할 id 제외
         setUsers(users.filter(user => user.id !== userId));
     };
 
@@ -33,7 +35,9 @@ function UserListTable({users, setUsers}) {
         textAlign: "center",
     });
 
-
+        // 핵심: users.map(user => ...) 
+        // map 의미: 배열 반복하면서 JSX 생성
+        // key를 쓰는 이유: React가 변경된 요소를 빠르게 찾기 위해 사용
     return <>
         <table style={{ boxSizing: 'border-box', border: '1px solid #dbdbdb', borderCollapse: 'collapse' }}>
             <thead>
@@ -46,7 +50,7 @@ function UserListTable({users, setUsers}) {
                 </tr>
             </thead>
             <tbody>
-                {users.map(user => (
+                {users.map(user => ( 
                     <tr key={user.id}>
                         <td style={thAndTdStyle()}>{user.id}</td>
                         <td style={thAndTdStyle("140px")}>{user.username}</td>
