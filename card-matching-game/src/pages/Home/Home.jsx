@@ -14,6 +14,7 @@ function Home() {
     }
 
     const handleStartOnClick = () => {
+
         if (!inputValue.trim()) {
             setInputValue("");
             Swal.fire({
@@ -23,6 +24,21 @@ function Home() {
             }); 
             return;
         }
+
+        fetch("http://localhost:8080/api/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                username: inputValue,
+            })
+        })
+        .then(response => response.json())
+        .then(json => {
+            console.log(json);
+        });
+
         navigate(`/game/${inputValue}`);
     }
 
