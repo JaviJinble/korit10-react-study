@@ -167,7 +167,7 @@ function P6() {
         return new Promise((resolve) => {
             setTimeout(() => {
                 setArr(prev => [...prev, "A"]);
-                resolve();
+                resolve("A");
             }, 2000);
         });
     }
@@ -176,7 +176,7 @@ function P6() {
         return new Promise((resolve) => {
             setTimeout(() => {
                 setArr(prev => [...prev, "B"]);
-                resolve();
+                resolve("B");
             }, 1000);
         });
     }
@@ -185,13 +185,13 @@ function P6() {
         return new Promise((resolve) => {
             setTimeout(() => {
                 setArr(prev => [...prev, "C"]);
-                resolve();
+                resolve("C");
             }, 4000);
         });
     }
 
     const handleOnClick = async () => {
-        const result = await Promise.all([getPromise1(), getPromise2(), getPromise3()])
+        const result = await Promise.all([getPromise1(), getPromise2(), getPromise3()]);
         setArr(result);
     }
 
