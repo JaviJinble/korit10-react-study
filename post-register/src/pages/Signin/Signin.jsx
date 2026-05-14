@@ -1,10 +1,11 @@
 import TextInput from "../../components/TextInput/TextInput";
 import PasswordInput from "../../components/PasswordInput/PasswordInput";
 import * as s from "./styles";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useState } from "react";
 
 function Signin() {
+    const navigate = useNavigate();
 
     const tempUser = {
         id: 1,
@@ -49,6 +50,9 @@ function Signin() {
         try {
             const response = await requestSignin(inputValues.email, inputValues.password);
             localStorage.setItem("accessToken", response.data.accessToken);
+            navigate("/",  {
+                replace: true,
+            });
         } catch (error) {
             alert(error.data);
         }

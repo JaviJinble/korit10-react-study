@@ -10,7 +10,7 @@ async function requestAuthentication(accessToken) {
             data: "AccessToken이 유효하지 않습니다."
         }
     }
-    
+
     const accessTokenObj = JSON.parse(accessToken);
     if (secret !== accessTokenObj.secret) {
         throw {
@@ -37,5 +37,7 @@ export function useAuthentication(accessToken) {
                 return error;
             }
         },
+        staleTime: 1000 * 60 * 2,
+        gcTime: 1000 * 60 * 5,
     });
 }
