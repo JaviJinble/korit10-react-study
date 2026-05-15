@@ -20,7 +20,7 @@ function Signin() {
     });
 
     const requestSignin = async (email, password) => {
-        const users = JSON.parse(localStorage.getItem("users")) || [];
+        const users = JSON.parse(localStorage.getItem("users")) || [tempUser];
         const foundUser = users.find(user => user.email === email && user.password === password);
         if (!foundUser) {
             throw {
