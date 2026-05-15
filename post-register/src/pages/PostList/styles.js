@@ -59,9 +59,9 @@ export const card = css`
     border-radius: 10px;
     padding: 20px;
     width: 300px;
-    height: 120px;
+    height: 150px;
     background-color: #ffffff;
-    cursor: pointer;
+    cursor: pointer;a
 
     &:hover {
         box-shadow: 0 0 10px 5px #ffffff88;
