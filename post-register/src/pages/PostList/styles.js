@@ -17,26 +17,9 @@ export const searchContainer = css`
     & input {
         margin: 0 !important;
     }
-
-    & button {
-        box-sizing: border-box;
-        border: 1px solid #dbdbdb;
-        border-radius: 4px;
-        padding: 0 15px;
-        background-color: #ffffff;
-        cursor: pointer;
-    }
-
-    & button:hover {
-        background-color: #f3f2ec;
-    }
-
-    & button:active {
-        background-color: #e9e8da;
-    }
 `;
 
-export const postList = css`
+export const postListContainer = css`
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -57,11 +40,15 @@ export const card = css`
     box-sizing: border-box;
     border: 1px solid #dbdbdb;
     border-radius: 10px;
-    padding: 20px;
     width: 300px;
-    height: 150px;
+    height: 250px;
     background-color: #ffffff;
-    cursor: pointer;a
+    overflow: hidden;
+    cursor: pointer;
+
+    & > div, & > footer {
+        padding: 10px;
+    }
 
     &:hover {
         box-shadow: 0 0 10px 5px #ffffff88;
@@ -70,6 +57,16 @@ export const card = css`
     &:active {
         transform: scale(96%);
     }
+`;
+
+export const cardThumbnail = (url) => css`
+    width: 100%;
+    height: 100px;
+    background-image: url("${url}");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fafafa;
 `;
 
 export const pagination = css`
