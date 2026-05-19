@@ -6,6 +6,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useEffect } from "react";
 import PostList from "../pages/PostList/PostList";
 import PostRegister from "../pages/PostRegister/PostRegister";
+import Menus from "../pages/Menus/Menus";
 
 function RootRoutes() {
     const {pathname} = useLocation();
@@ -36,6 +37,7 @@ function RootRoutes() {
             : <Routes>
                 <Route path="/" element={<PostList />} />
                 <Route path="/write" element={<PostRegister />} />
+                <Route path="/menus" element={<Menus />} />
                 <Route path="/auth/*" element={<AuthRoutes />} />
                 <Route path="*" element={<>페이지를 찾을 수 없습니다.</>} />
             </Routes>
